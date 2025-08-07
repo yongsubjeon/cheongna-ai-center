@@ -70,60 +70,18 @@ SUPABASE_JWT_SECRET=your_jwt_secret
 2. 프로젝트 URL과 anon key를 `.env.local`에 추가
 
 #### 4-2. 데이터베이스 테이블 생성
+
+**옵션 1: 기존 데이터를 유지하면서 수정 (권장)**
 Supabase SQL Editor에서 다음 스크립트들을 순서대로 실행하세요:
 
-\`\`\`sql
--- 1. 강의 테이블 생성
-CREATE TABLE IF NOT EXISTS public.lectures (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  title TEXT NOT NULL,
-  video_url TEXT NOT NULL,
-  created_at TIMESTAMPTZ DEFAULT NOW()
-);
+1. `scripts/fix-rls-policies-final.sql` - RLS 정책 수정 및 필요한 강의 데이터 추가
+2. `scripts/add-unique-constraint-fixed.sql` - 중복 제거 및 유니크 제약조건 추가
 
--- 2. 진도 관리 테이블 생성
-CREATE TABLE IF NOT EXISTS public.lecture_progress (
-  user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
-  lecture_id UUID NOT NULL REFERENCES public.lectures(id) ON DELETE CASCADE,
-  completed BOOLEAN DEFAULT FALSE,
-  completed_at TIMESTAMPTZ,
-  created_at TIMESTAMPTZ DEFAULT NOW(),
-  updated_at TIMESTAMPTZ DEFAULT NOW(),
-  PRIMARY KEY (user_id, lecture_id)
-);
+**옵션 2: 완전히 새로 시작 (데이터 삭제됨)**
+기존 데이터를 모두 삭제하고 새로 시작하려면:
+- `scripts/reset-and-recreate-tables.sql` 실행
 
--- 3. RLS 정책 설정
-ALTER TABLE public.lectures ENABLE ROW LEVEL SECURITY;
-ALTER TABLE public.lecture_progress ENABLE ROW LEVEL SECURITY;
-
--- 강의는 모든 사용자가 읽기 가능
-CREATE POLICY "Allow public read access to lectures" ON public.lectures
-  FOR SELECT USING (true);
-
--- 진도는 본인 것만 접근 가능
-CREATE POLICY "Users can view their own progress" ON public.lecture_progress
-  FOR SELECT USING (auth.uid() = user_id);
-
-CREATE POLICY "Users can insert their own progress" ON public.lecture_progress
-  FOR INSERT WITH CHECK (auth.uid() = user_id);
-
-CREATE POLICY "Users can update their own progress" ON public.lecture_progress
-  FOR UPDATE USING (auth.uid() = user_id);
-\`\`\`
-
-#### 4-3. 샘플 데이터 삽입
-\`\`\`sql
--- 샘플 강의 데이터 삽입
-INSERT INTO public.lectures (title, video_url) VALUES
-  ('AI 영상 영화 제작 입문자를 위한 시간 아끼는 편집 비법 공개', 'https://www.youtube.com/embed/8P6Q_RnlvJo?enablejsapi=1'),
-  ('15분만에 만드는 애니메이션 영상', 'https://www.youtube.com/embed/vWycO5TfawY?enablejsapi=1'),
-  ('동일한 캐릭터로 연속 이미지 만들기', 'https://www.youtube.com/embed/-vAmrsYw2VI?enablejsapi=1'),
-  ('전 임직원을 위한 AI 실무 활용 워크숍', 'https://www.youtube.com/embed/dQw4w9WgXcQ'),
-  ('생성형 AI 이미지 영상 만들기', 'https://www.youtube.com/embed/8P6Q_RnlvJo?enablejsapi=1')
-ON CONFLICT DO NOTHING;
-\`\`\`
-
-#### 4-4. 인증 설정
+#### 4-3. 인증 설정
 Supabase Dashboard > Authentication > Settings에서:
 - **Site URL**: `http://localhost:3000` (개발용)
 - **Redirect URLs**: 
@@ -138,6 +96,20 @@ yarn dev
 \`\`\`
 
 브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 확인하세요.
+
+## 🔧 문제 해결
+
+### RLS 정책 오류가 발생하는 경우
+\`\`\`
+Error creating lecture: new row violates row-level security policy for table "lectures"
+\`\`\`
+
+이 오류가 발생하면 다음 스크립트를 실행하세요:
+1. `scripts/fix-rls-policies-final.sql`
+2. `scripts/add-unique-constraint-fixed.sql`
+
+### 강의 데이터가 없는 경우
+강의 목록이 비어있다면 `scripts/fix-rls-policies-final.sql`을 실행하여 샘플 데이터를 추가하세요.
 
 ## 📁 프로젝트 구조
 
