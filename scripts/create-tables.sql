@@ -21,9 +21,12 @@ CREATE TABLE IF NOT EXISTS public.lecture_progress (
 ALTER TABLE public.lectures ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.lecture_progress ENABLE ROW LEVEL SECURITY;
 
--- RLS Policies for lectures (public read)
+-- RLS Policies for lectures (public read, authenticated users can insert)
 CREATE POLICY "Allow public read access to lectures" ON public.lectures
   FOR SELECT USING (true);
+
+CREATE POLICY "Allow authenticated users to insert lectures" ON public.lectures
+  FOR INSERT WITH CHECK (auth.role() = 'authenticated');
 
 -- RLS Policies for lecture_progress (user can only access their own records)
 CREATE POLICY "Users can view their own progress" ON public.lecture_progress
