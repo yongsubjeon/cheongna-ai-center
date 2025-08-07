@@ -1,12 +1,7 @@
--- This script completely resets the tables and recreates them properly
--- WARNING: This will delete all existing data!
+-- 청라에너지 AI 교육 플랫폼 데이터베이스 초기 설정
 
--- Drop existing tables (this will also drop the policies)
-DROP TABLE IF EXISTS public.lecture_progress CASCADE;
-DROP TABLE IF EXISTS public.lectures CASCADE;
-
--- Create lectures table with unique constraint
-CREATE TABLE public.lectures (
+-- Create lectures table
+CREATE TABLE IF NOT EXISTS public.lectures (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   title TEXT NOT NULL UNIQUE,
   video_url TEXT NOT NULL,
@@ -14,7 +9,7 @@ CREATE TABLE public.lectures (
 );
 
 -- Create lecture_progress table
-CREATE TABLE public.lecture_progress (
+CREATE TABLE IF NOT EXISTS public.lecture_progress (
   user_id UUID NOT NULL REFERENCES auth.users(id) ON DELETE CASCADE,
   lecture_id UUID NOT NULL REFERENCES public.lectures(id) ON DELETE CASCADE,
   completed BOOLEAN DEFAULT FALSE,
@@ -28,14 +23,11 @@ CREATE TABLE public.lecture_progress (
 ALTER TABLE public.lectures ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.lecture_progress ENABLE ROW LEVEL SECURITY;
 
--- RLS Policies for lectures
+-- RLS Policies for lectures (public read)
 CREATE POLICY "Allow public read access to lectures" ON public.lectures
   FOR SELECT USING (true);
 
-CREATE POLICY "Allow authenticated users to insert lectures" ON public.lectures
-  FOR INSERT WITH CHECK (auth.role() = 'authenticated');
-
--- RLS Policies for lecture_progress
+-- RLS Policies for lecture_progress (user can only access their own records)
 CREATE POLICY "Users can view their own progress" ON public.lecture_progress
   FOR SELECT USING (auth.uid() = user_id);
 
