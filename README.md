@@ -18,6 +18,7 @@
 2. **AI 영상 영화 제작 입문자를 위한 편집 비법**
 3. **15분만에 만드는 애니메이션 영상**
 4. **동일한 캐릭터로 연속 이미지 만들기**
+5. **전 임직원을 위한 AI 실무 활용 워크숍**
 
 ## 🛠 기술 스택
 
@@ -69,17 +70,20 @@ SUPABASE_JWT_SECRET=your_jwt_secret
 1. [Supabase](https://supabase.com)에서 새 프로젝트 생성
 2. 프로젝트 URL과 anon key를 `.env.local`에 추가
 
-#### 4-2. 데이터베이스 테이블 생성
+#### 4-2. 데이터베이스 설정
 
-**옵션 1: 기존 데이터를 유지하면서 수정 (권장)**
-Supabase SQL Editor에서 다음 스크립트들을 순서대로 실행하세요:
+**새 프로젝트 설정 (권장)**
+Supabase SQL Editor에서 다음 스크립트를 실행하세요:
 
-1. `scripts/fix-rls-policies-final.sql` - RLS 정책 수정 및 필요한 강의 데이터 추가
-2. `scripts/add-unique-constraint-fixed.sql` - 중복 제거 및 유니크 제약조건 추가
+\`\`\`sql
+-- scripts/create-tables-updated.sql 파일의 내용을 복사하여 실행
+\`\`\`
 
-**옵션 2: 완전히 새로 시작 (데이터 삭제됨)**
-기존 데이터를 모두 삭제하고 새로 시작하려면:
-- `scripts/reset-and-recreate-tables.sql` 실행
+이 스크립트는 다음을 수행합니다:
+- 필요한 테이블 생성 (lectures, lecture_progress)
+- RLS (Row Level Security) 정책 설정
+- 샘플 강의 데이터 삽입
+- 중복 방지를 위한 UNIQUE 제약조건 설정
 
 #### 4-3. 인증 설정
 Supabase Dashboard > Authentication > Settings에서:
@@ -97,28 +101,41 @@ yarn dev
 
 브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 확인하세요.
 
+## 🔧 주요 페이지
+
+- **홈페이지**: `/` - 강의 목록 및 소개
+- **강의 상세**: `/course/computer-science-beginners` - 생성형 AI 강의
+- **강의 목록**: `/lectures` - 모든 강의 목록 (로그인 필요)
+- **개별 강의**: `/lectures/[id]` - 개별 강의 페이지 (로그인 필요)
+
 ## 🔧 문제 해결
 
-### RLS 정책 오류가 발생하는 경우
+### 데이터베이스 연결 오류
+환경 변수가 올바르게 설정되었는지 확인하세요:
+\`\`\`bash
+# .env.local 파일 확인
+cat .env.local
 \`\`\`
-Error creating lecture: new row violates row-level security policy for table "lectures"
-\`\`\`
-
-이 오류가 발생하면 다음 스크립트를 실행하세요:
-1. `scripts/fix-rls-policies-final.sql`
-2. `scripts/add-unique-constraint-fixed.sql`
 
 ### 강의 데이터가 없는 경우
-강의 목록이 비어있다면 `scripts/fix-rls-policies-final.sql`을 실행하여 샘플 데이터를 추가하세요.
+`scripts/create-tables-updated.sql`을 다시 실행하여 샘플 데이터를 추가하세요.
+
+### RLS 정책 오류
+Supabase에서 RLS 정책이 올바르게 설정되었는지 확인하세요. 필요시 `scripts/create-tables-updated.sql`을 다시 실행하세요.
 
 ## 📁 프로젝트 구조
 
 \`\`\`
 ├── app/                    # Next.js App Router
 │   ├── auth/              # 인증 관련 API 라우트
+│   │   ├── callback/      # OAuth 콜백 처리
+│   │   └── confirm/       # 이메일 인증 처리
 │   ├── course/            # 강의 상세 페이지
+│   │   ├── 10479/         # 로드맵 페이지
+│   │   └── computer-science-beginners/  # AI 강의 페이지
 │   ├── lectures/          # 강의 목록 및 개별 강의 페이지
 │   ├── layout.tsx         # 루트 레이아웃
+│   ├── loading.tsx        # 로딩 컴포넌트
 │   └── page.tsx           # 홈페이지
 ├── components/            # 재사용 가능한 컴포넌트
 │   ├── ui/               # shadcn/ui 컴포넌트
@@ -127,26 +144,36 @@ Error creating lecture: new row violates row-level security policy for table "le
 ├── contexts/             # React Context
 │   └── auth-context.tsx  # 인증 컨텍스트
 ├── lib/                  # 유틸리티 및 설정
-│   └── supabase/         # Supabase 클라이언트 설정
+│   ├── supabase/         # Supabase 클라이언트 설정
+│   │   ├── client.ts     # 브라우저 클라이언트
+│   │   ├── server.ts     # 서버 클라이언트
+│   │   └── types.ts      # TypeScript 타입 정의
+│   └── supabase.ts       # 메인 Supabase 클라이언트
+├── middleware.ts         # Next.js 미들웨어 (인증 보호)
 ├── public/               # 정적 파일
+│   └── images/           # 이미지 파일
 └── scripts/              # 데이터베이스 스크립트
+    └── create-tables-updated.sql  # 메인 설정 스크립트
 \`\`\`
 
 ## 🔧 주요 기능 설명
 
 ### 인증 시스템
 - **이메일 회원가입/로그인**: 이메일 인증 포함
-- **소셜 로그인**: Google OAuth 지원
+- **소셜 로그인**: Google OAuth 지원 (확장 가능)
 - **세션 관리**: Supabase Auth를 통한 자동 세션 관리
+- **보호된 라우트**: 미들웨어를 통한 인증 필요 페이지 보호
 
 ### 강의 시스템
 - **동영상 스트리밍**: YouTube 임베드 활용
 - **진도 추적**: 사용자별 강의 완료 상태 저장
 - **타임스탬프 네비게이션**: 강의 내 특정 시점으로 이동
+- **강의 완료**: 완료 버튼을 통한 진도 관리
 
 ### 반응형 디자인
 - **모바일 최적화**: 모든 화면 크기에서 최적화된 UI
-- **다크모드 지원**: 사용자 선호도에 따른 테마 변경
+- **Tailwind CSS**: 유틸리티 기반 스타일링
+- **shadcn/ui**: 일관된 UI 컴포넌트
 
 ## 🚀 배포
 
@@ -182,3 +209,11 @@ Error creating lecture: new row violates row-level security policy for table "le
 ---
 
 **청라에너지 x 도슨티 DX 역량강화 교육** 🚀
+
+### 🎯 빠른 시작 가이드
+
+1. **저장소 클론** → **의존성 설치** → **환경 변수 설정**
+2. **Supabase 프로젝트 생성** → **`scripts/create-tables-updated.sql` 실행**
+3. **`npm run dev`** → **http://localhost:3000 접속**
+
+이제 완전히 작동하는 AI 교육 플랫폼을 사용할 수 있습니다! 🎉
