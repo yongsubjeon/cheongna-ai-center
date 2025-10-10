@@ -55,9 +55,9 @@ export default function RoadmapPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
             <Badge className="bg-blue-500 text-white mb-4">로드맵</Badge>
-            <h1 className="text-4xl font-bold mb-4">[견고한 출시까지] 유니티 게임 개발 모바일 MMORPG 개발 로드맵</h1>
+            <h1 className="text-4xl font-bold mb-4">[전사교육] 생성형 AI 원리 이해</h1>
             <p className="text-lg mb-6 opacity-90">
-              Unity 엔진을 활용하여 모바일 MMORPG 게임을 처음부터 출시까지 완성하는 전체 과정을 학습합니다.
+              청라에너지형 AI 기술 이해와 조직 적용 전략
             </p>
             <div className="flex items-center justify-center space-x-6 mb-8">
               <div className="flex items-center space-x-2">
