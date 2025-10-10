@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { supabase } from "@/lib/supabase/client"
 import { useAuth } from "@/contexts/auth-context"
-import { CheckCircle, Loader2 } from "lucide-react"
+import { CheckCircle, Loader2 } from 'lucide-react'
 import { useRouter } from "next/navigation"
 
 interface CompleteButtonProps {
@@ -39,7 +39,7 @@ export default function CompleteButton({ lectureId }: CompleteButtonProps) {
       // First, try to find the lecture by ID (if it's a UUID)
       let actualLectureId = lectureId
 
-      // If lectureId is not a UUID format, try to find the lecture by title or create one
+      // If lectureId is not a UUID format, try to find the lecture by title
       if (!isValidUUID(lectureId)) {
         const { data: lecture, error: lectureError } = await supabase
           .from("lectures")
@@ -48,26 +48,16 @@ export default function CompleteButton({ lectureId }: CompleteButtonProps) {
           .single()
 
         if (lectureError && lectureError.code === "PGRST116") {
-          // Lecture doesn't exist, create it
-          const { data: newLecture, error: createError } = await supabase
-            .from("lectures")
-            .insert({
-              title: "생성형 AI 이미지 영상 만들기",
-              video_url: "https://www.youtube.com/embed/8P6Q_RnlvJo?enablejsapi=1",
-            })
-            .select("id")
-            .single()
-
-          if (createError) {
-            console.error("Error creating lecture:", createError)
-            setError("강의 정보를 생성할 수 없습니다.")
-            return
-          }
-
-          actualLectureId = newLecture.id
+          // Lecture doesn't exist, but we shouldn't create it here
+          // Instead, we'll use a default lecture ID or handle this case differently
+          console.error("Lecture not found:", lectureError)
+          setError("강의 정보를 찾을 수 없습니다. 관리자에게 문의하세요.")
+          setIsInitialLoading(false)
+          return
         } else if (lectureError) {
           console.error("Error finding lecture:", lectureError)
           setError("강의 정보를 찾을 수 없습니다.")
+          setIsInitialLoading(false)
           return
         } else {
           actualLectureId = lecture.id
@@ -118,7 +108,7 @@ export default function CompleteButton({ lectureId }: CompleteButtonProps) {
 
         if (lectureError) {
           console.error("Error finding lecture:", lectureError)
-          setError("강의 정보를 찾을 수 없습니다.")
+          setError("강의 정보를 찾을 수 없습니다. 관리자에게 문의하세요.")
           return
         }
 
