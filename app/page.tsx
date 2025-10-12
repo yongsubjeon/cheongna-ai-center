@@ -278,7 +278,11 @@ export default function InflearnHomepage() {
                   <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
                     <span className="text-white font-bold">S</span>
                   </div>
-                  <h3 className="font-bold text-lg text-green-600">전사교육</h3>
+                  <Link href="/course/ai-trends">
+                    <h3 className="font-bold text-lg text-green-600 hover:text-green-600 cursor-pointer">
+                      AI 활용 동향. 에너지 운영현장 중심 AI 도입 사례 공유
+                    </h3>
+                  </Link>
                   <Badge className="bg-green-500 text-white text-xs">Part 1</Badge>
                 </div>
               </div>
