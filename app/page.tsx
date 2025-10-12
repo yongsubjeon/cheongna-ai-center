@@ -207,7 +207,7 @@ export default function InflearnHomepage() {
           <Card className="overflow-hidden">
             <div className="relative">
               <Image
-                src="/images/ai-workshop-thumbnail.webp"
+                src="/images/docenty-ai-workshop.webp"
                 alt="전 임직원을 위한 AI 실무 활용 워크숍"
                 width={320}
                 height={160}
