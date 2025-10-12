@@ -206,11 +206,14 @@ export default function InflearnHomepage() {
           {/* Course Card 1 - Unity */}
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="h-40 bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <div className="text-sm bg-blue-500 px-2 py-1 rounded mb-2">{"docenty ai "}</div>
-                </div>
-              </div>
+              <Image
+                src="/images/ai-workshop-thumbnail.webp"
+                alt="전 임직원을 위한 AI 실무 활용 워크숍"
+                width={320}
+                height={160}
+                className="w-full h-40 object-cover"
+                priority
+              />
             </div>
             <CardContent className="p-4">
               <Link href="/course/10479">
@@ -273,15 +276,13 @@ export default function InflearnHomepage() {
           {/* Course Card 3 - Spring MVC */}
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="h-40 bg-gray-100 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <span className="text-white font-bold">S</span>
-                  </div>
-                  <h3 className="font-bold text-lg text-green-600">전사교육</h3>
-                  <Badge className="bg-green-500 text-white text-xs">Part 1</Badge>
-                </div>
-              </div>
+              <Image
+                src="/images/ai-trends-thumbnail.webp"
+                alt="AI 활용 동향"
+                width={320}
+                height={160}
+                className="w-full h-40 object-cover"
+              />
             </div>
             <CardContent className="p-4">
               <h4 className="font-medium text-sm mb-2">AI 활용 동향. 에너지 운영현장 중심 AI 도입 사례 공유</h4>
@@ -308,12 +309,13 @@ export default function InflearnHomepage() {
           {/* Course Card 4 - Unity MMORPG */}
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="h-40 bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <div className="flex items-center justify-center mb-2"></div>
-                  <h3 className="font-bold">강의 준비 중 입니다.</h3>
-                </div>
-              </div>
+              <Image
+                src="/images/ai-ethics-thumbnail.webp"
+                alt="AI 활용 시 데이터 보안과 업무 윤리"
+                width={320}
+                height={160}
+                className="w-full h-40 object-cover"
+              />
             </div>
             <CardContent className="p-4">
               <h4 className="font-medium text-sm mb-2">
@@ -340,11 +342,13 @@ export default function InflearnHomepage() {
           {/* Course Card 5 - Java Advanced */}
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="h-40 bg-gray-800 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <h3 className="font-bold text-lg">강의 준비 중 입니다.</h3>
-                </div>
-              </div>
+              <Image
+                src="/images/workflow-automation-thumbnail.webp"
+                alt="노코드 워크플로우 자동화"
+                width={320}
+                height={160}
+                className="w-full h-40 object-cover"
+              />
             </div>
             <CardContent className="p-4">
               <h4 className="font-medium text-sm mb-2">노코드 워크플로우 자동화. 청라에너지 업무와 AI 자동화 개론</h4>
@@ -371,11 +375,13 @@ export default function InflearnHomepage() {
           {/* Course Card 6 - Java Advanced Part 1 */}
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="h-40 bg-gray-800 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <h3 className="font-bold text-lg">강의 준비 중 입니다.</h3>
-                </div>
-              </div>
+              <Image
+                src="/images/ai-document-thumbnail.webp"
+                alt="생성형 AI로 회신 공문·보고서 작성"
+                width={320}
+                height={160}
+                className="w-full h-40 object-cover"
+              />
             </div>
             <CardContent className="p-4">
               <h4 className="font-medium text-sm mb-2">생성형 AI로 회신 공문·보고서 작성 실무</h4>
@@ -402,11 +408,13 @@ export default function InflearnHomepage() {
           {/* Course Card 7 - Game Programmer */}
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="h-40 bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <h3 className="font-bold text-lg">강의 준비 중 입니다.</h3>
-                </div>
-              </div>
+              <Image
+                src="/images/excel-automation-thumbnail.webp"
+                alt="엑셀 요금표 기반 납입계획표 생성 자동화"
+                width={320}
+                height={160}
+                className="w-full h-40 object-cover"
+              />
             </div>
             <CardContent className="p-4">
               <h4 className="font-medium text-sm mb-2">엑셀 요금표 기반 납입계획표 생성 자동화</h4>
@@ -431,11 +439,13 @@ export default function InflearnHomepage() {
           {/* Course Card 8 - Spring Boot */}
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="h-40 bg-green-600 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <h3 className="font-bold text-lg">강의 준비 중 입니다.</h3>
-                </div>
-              </div>
+              <Image
+                src="/images/dashboard-thumbnail.webp"
+                alt="피벗·대시보드로 계약·공급 흐름 한눈에 보기"
+                width={320}
+                height={160}
+                className="w-full h-40 object-cover"
+              />
             </div>
             <CardContent className="p-4">
               <h4 className="font-medium text-sm mb-2">피벗·대시보드로 계약·공급 흐름 한눈에 보기</h4>
@@ -460,12 +470,13 @@ export default function InflearnHomepage() {
           {/* Course Card 9 - C++ MMORPG */}
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="h-40 bg-gradient-to-r from-red-900 to-black flex items-center justify-center">
-                <div className="text-center text-white">
-                  <div className="flex items-center justify-center mb-2"></div>
-                  <h3 className="font-bold">강의 준비 중 입니다.</h3>
-                </div>
-              </div>
+              <Image
+                src="/images/chatbot-thumbnail.webp"
+                alt="고객 민원,계약 문의 응대를 위한 챗봇 구축"
+                width={320}
+                height={160}
+                className="w-full h-40 object-cover"
+              />
             </div>
             <CardContent className="p-4">
               <h4 className="font-medium text-sm mb-2">자연어처리 이해. 고객 민원,계약 문의 응대를 위한 챗봇 구축</h4>
@@ -490,11 +501,13 @@ export default function InflearnHomepage() {
           {/* Course Card 10 - C# Programming */}
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="h-40 bg-gradient-to-r from-pink-300 to-purple-300 flex items-center justify-center">
-                <div className="text-center">
-                  <h3 className="font-bold text-purple-800">강의 준비 중 입니다.</h3>
-                </div>
-              </div>
+              <Image
+                src="/images/data-visualization-thumbnail.webp"
+                alt="데이터 시각화. 단지별 사용량/실적 분석 및 시각화"
+                width={320}
+                height={160}
+                className="w-full h-40 object-cover"
+              />
             </div>
             <CardContent className="p-4">
               <h4 className="font-medium text-sm mb-2">데이터 시각화. 단지별 사용량/실적 분석 및 시각화</h4>
