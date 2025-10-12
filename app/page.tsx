@@ -232,7 +232,7 @@ export default function InflearnHomepage() {
                   <span>3,300+</span>
                 </div>
               </div>
-              <Badge className="bg-blue-500 text-white text-xs mt-2">전사교육</Badge>
+              <Badge className="bg-blue-500 text-white text-xs mt-2">입문 활용</Badge>
             </CardContent>
           </Card>
 
@@ -265,7 +265,7 @@ export default function InflearnHomepage() {
                     <span>25</span>
                   </div>
                 </div>
-                <Badge className="bg-blue-500 text-white text-xs mt-2">핵심역량</Badge>
+                <Badge className="bg-blue-500 text-white text-xs mt-2">입문 활용</Badge>
               </CardContent>
             </Card>
           </Link>
