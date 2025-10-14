@@ -392,42 +392,44 @@ export default function InflearnHomepage() {
           </Card>
 
           {/* Course Card 6 - Java Advanced Part 1 */}
-          <Card className="overflow-hidden">
-            <div className="relative">
-              <div className="aspect-video w-full">
-                <Image
-                  src="https://img.youtube.com/vi/IUv61g6bHiE/maxresdefault.jpg"
-                  alt="생성형 AI로 회신 공문·보고서 작성 실무"
-                  width={320}
-                  height={180}
-                  className="w-full h-full object-cover"
-                  priority
-                />
-              </div>
-            </div>
-            <CardContent className="p-4">
-              <h4 className="font-medium text-sm mb-2 hover:text-green-600 cursor-pointer">
-                생성형 AI로 회신 공문·보고서 작성 실무
-              </h4>
-              <p className="text-xs text-gray-600 mb-2">김영한</p>
-              <div className="flex items-center justify-between mb-2">
-                <div>
-                  <span className="font-bold ml-0 text-black">핵심역량교육</span>
+          <Link href="/course/document-writing">
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+              <div className="relative">
+                <div className="aspect-video w-full">
+                  <Image
+                    src="https://img.youtube.com/vi/IUv61g6bHiE/maxresdefault.jpg"
+                    alt="생성형 AI로 회신 공문·보고서 작성 실무"
+                    width={320}
+                    height={180}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
                 </div>
               </div>
-              <div className="flex items-center space-x-2 text-xs">
-                <div className="flex items-center">
-                  <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-                  <span>5.0 (371)</span>
+              <CardContent className="p-4">
+                <h4 className="font-medium text-sm mb-2 hover:text-green-600 cursor-pointer">
+                  생성형 AI로 회신 공문·보고서 작성 실무
+                </h4>
+                <p className="text-xs text-gray-600 mb-2">김영한</p>
+                <div className="flex items-center justify-between mb-2">
+                  <div>
+                    <span className="font-bold ml-0 text-black">핵심역량교육</span>
+                  </div>
                 </div>
-                <div className="flex items-center">
-                  <Users className="w-3 h-3" />
-                  <span>7,600+</span>
+                <div className="flex items-center space-x-2 text-xs">
+                  <div className="flex items-center">
+                    <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                    <span>5.0 (371)</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Users className="w-3 h-3" />
+                    <span>7,600+</span>
+                  </div>
                 </div>
-              </div>
-              <Badge className="bg-blue-500 text-white text-xs mt-2">입문 활용</Badge>
-            </CardContent>
-          </Card>
+                <Badge className="bg-blue-500 text-white text-xs mt-2">입문 활용</Badge>
+              </CardContent>
+            </Card>
+          </Link>
 
           {/* Course Card 7 - Game Programmer */}
           <Card className="overflow-hidden">
