@@ -283,7 +283,7 @@ export default function InflearnHomepage() {
               <div className="relative">
                 <div className="aspect-video w-full">
                   <Image
-                    src="https://img.youtube.com/vi/Tvh50Xog3H4/maxresdefault.jpg"
+                    src="/images/design-mode/maxresdefault.jpg"
                     alt="AI 활용 동향 강의"
                     width={320}
                     height={180}
@@ -296,10 +296,10 @@ export default function InflearnHomepage() {
                 <h4 className="font-medium text-sm mb-2 hover:text-green-600">
                   AI 활용 동향. 에너지 운영현장 중심 AI 도입 사례 공유
                 </h4>
-                <p className="text-xs text-gray-600 mb-2">김영한</p>
+                <p className="text-xs text-gray-600 mb-2">구요한 대표</p>
                 <div className="flex items-center justify-between mb-2">
                   <div>
-                    <span className="font-bold text-black ml-0">전사교육</span>
+                    <span className="font-bold text-black ml-0">핵심역량</span>
                   </div>
                 </div>
                 <div className="flex items-center space-x-2 text-xs">
@@ -329,9 +329,9 @@ export default function InflearnHomepage() {
             </div>
             <CardContent className="p-4">
               <h4 className="font-medium text-sm mb-2">
-                모니터링, 품질 관리 방법. AI 활용 시 데이터 보안과 업무 윤리 교육
+                생성형 AI 원리 이해. 청라에너지형 AI 기술이해와 조직적용 전략
               </h4>
-              <p className="text-xs text-gray-600 mb-2">구요한 대표</p>
+              <p className="text-xs text-gray-600 mb-2">전용섭 디렉터</p>
               <div className="flex items-center justify-between mb-2">
                 <span className="font-bold">전사교육</span>
               </div>
