@@ -318,36 +318,42 @@ export default function InflearnHomepage() {
           </Link>
 
           {/* Course Card 4 - Unity MMORPG */}
-          <Card className="overflow-hidden">
-            <div className="relative">
-              <div className="aspect-video w-full bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <div className="flex items-center justify-center mb-2"></div>
-                  <h3 className="font-bold">강의 준비 중 입니다.</h3>
+          <Link href="/course/ai-principles">
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+              <div className="relative">
+                <div className="aspect-video w-full">
+                  <Image
+                    src="https://img.youtube.com/vi/LXZD-l2nI2s/maxresdefault.jpg"
+                    alt="생성형 AI 원리 이해"
+                    width={320}
+                    height={180}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
                 </div>
               </div>
-            </div>
-            <CardContent className="p-4">
-              <h4 className="font-medium text-sm mb-2">
-                생성형 AI 원리 이해. 청라에너지형 AI 기술이해와 조직적용 전략
-              </h4>
-              <p className="text-xs text-gray-600 mb-2">전용섭 디렉터</p>
-              <div className="flex items-center justify-between mb-2">
-                <span className="font-bold">전사교육</span>
-              </div>
-              <div className="flex items-center space-x-2 text-xs">
-                <div className="flex items-center">
-                  <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-                  <span>4.9 (620)</span>
+              <CardContent className="p-4">
+                <h4 className="font-medium text-sm mb-2 hover:text-green-600">
+                  생성형 AI 원리 이해. 청라에너지형 AI 기술이해와 조직적용 전략
+                </h4>
+                <p className="text-xs text-gray-600 mb-2">전용섭 디렉터</p>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-bold">전사교육</span>
                 </div>
-                <div className="flex items-center">
-                  <Users className="w-3 h-3" />
-                  <span>6,800+</span>
+                <div className="flex items-center space-x-2 text-xs">
+                  <div className="flex items-center">
+                    <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                    <span>4.9 (620)</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Users className="w-3 h-3" />
+                    <span>6,800+</span>
+                  </div>
                 </div>
-              </div>
-              <Badge className="bg-blue-500 text-white text-xs mt-2">입문 활용</Badge>
-            </CardContent>
-          </Card>
+                <Badge className="bg-blue-500 text-white text-xs mt-2">입문 활용</Badge>
+              </CardContent>
+            </Card>
+          </Link>
 
           {/* Course Card 5 - Java Advanced */}
           <Card className="overflow-hidden">
