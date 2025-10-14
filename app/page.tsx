@@ -208,7 +208,7 @@ export default function InflearnHomepage() {
             <div className="relative">
               <div className="aspect-video w-full">
                 <Image
-                  src="https://img.youtube.com/vi/nqekmDbsKvo/maxresdefault.jpg"
+                  src="/images/design-mode/maxresdefault(1).jpg"
                   alt="AI 실무 활용 워크숍"
                   width={320}
                   height={180}
@@ -323,7 +323,7 @@ export default function InflearnHomepage() {
               <div className="relative">
                 <div className="aspect-video w-full">
                   <Image
-                    src="https://img.youtube.com/vi/LXZD-l2nI2s/maxresdefault.jpg"
+                    src="/images/design-mode/maxresdefault(1).jpg"
                     alt="생성형 AI 원리 이해"
                     width={320}
                     height={180}
@@ -358,10 +358,15 @@ export default function InflearnHomepage() {
           {/* Course Card 5 - Java Advanced */}
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="aspect-video w-full bg-gray-800 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <h3 className="font-bold text-lg">강의 준비 중 입니다.</h3>
-                </div>
+              <div className="aspect-video w-full">
+                <Image
+                  src="https://img.youtube.com/vi/tkaDX4QrlbQ/maxresdefault.jpg"
+                  alt="노코드 워크플로우 자동화"
+                  width={320}
+                  height={180}
+                  className="w-full h-full object-cover"
+                  priority
+                />
               </div>
             </div>
             <CardContent className="p-4">
@@ -389,14 +394,21 @@ export default function InflearnHomepage() {
           {/* Course Card 6 - Java Advanced Part 1 */}
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="aspect-video w-full bg-gray-800 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <h3 className="font-bold text-lg">강의 준비 중 입니다.</h3>
-                </div>
+              <div className="aspect-video w-full">
+                <Image
+                  src="https://img.youtube.com/vi/IUv61g6bHiE/maxresdefault.jpg"
+                  alt="생성형 AI로 회신 공문·보고서 작성 실무"
+                  width={320}
+                  height={180}
+                  className="w-full h-full object-cover"
+                  priority
+                />
               </div>
             </div>
             <CardContent className="p-4">
-              <h4 className="font-medium text-sm mb-2">생성형 AI로 회신 공문·보고서 작성 실무</h4>
+              <h4 className="font-medium text-sm mb-2 hover:text-green-600 cursor-pointer">
+                생성형 AI로 회신 공문·보고서 작성 실무
+              </h4>
               <p className="text-xs text-gray-600 mb-2">김영한</p>
               <div className="flex items-center justify-between mb-2">
                 <div>
@@ -506,33 +518,42 @@ export default function InflearnHomepage() {
           </Card>
 
           {/* Course Card 10 - C# Programming */}
-          <Card className="overflow-hidden">
-            <div className="relative">
-              <div className="aspect-video w-full bg-gradient-to-r from-pink-300 to-purple-300 flex items-center justify-center">
-                <div className="text-center">
-                  <h3 className="font-bold text-purple-800">강의 준비 중 입니다.</h3>
+          <Link href="/course/data-visualization">
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+              <div className="relative">
+                <div className="aspect-video w-full">
+                  <Image
+                    src="https://img.youtube.com/vi/xYR6Wl7dWM8/maxresdefault.jpg"
+                    alt="데이터 시각화 강의"
+                    width={320}
+                    height={180}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
                 </div>
               </div>
-            </div>
-            <CardContent className="p-4">
-              <h4 className="font-medium text-sm mb-2">데이터 시각화. 단지별 사용량/실적 분석 및 시각화</h4>
-              <p className="text-xs text-gray-600 mb-2">Kaburi</p>
-              <div className="flex items-center justify-between mb-2">
-                <span className="font-bold">핵심역량 교육</span>
-              </div>
-              <div className="flex items-center space-x-2 text-xs">
-                <div className="flex items-center">
-                  <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-                  <span>5.0 (24)</span>
+              <CardContent className="p-4">
+                <h4 className="font-medium text-sm mb-2 hover:text-green-600">
+                  데이터 시각화. 단지별 사용량/실적 분석 및 시각화
+                </h4>
+                <p className="text-xs text-gray-600 mb-2">김상용 대표 SBA</p>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-bold">핵심역량 교육</span>
                 </div>
-                <div className="flex items-center">
-                  <Users className="w-3 h-3" />
-                  <span>300+</span>
+                <div className="flex items-center space-x-2 text-xs">
+                  <div className="flex items-center">
+                    <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                    <span>5.0 (24)</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Users className="w-3 h-3" />
+                    <span>300+</span>
+                  </div>
                 </div>
-              </div>
-              <Badge className="bg-green-500 text-white text-xs mt-2">Update</Badge>
-            </CardContent>
-          </Card>
+                <Badge className="bg-green-500 text-white text-xs mt-2">Update</Badge>
+              </CardContent>
+            </Card>
+          </Link>
         </div>
       </main>
 
