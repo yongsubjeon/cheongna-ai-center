@@ -206,10 +206,15 @@ export default function InflearnHomepage() {
           {/* Course Card 1 - Unity */}
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="h-40 bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center">
-                <div className="text-center text-white">
-                  <div className="text-sm bg-blue-500 px-2 py-1 rounded mb-2">{"docenty ai "}</div>
-                </div>
+              <div className="aspect-video w-full">
+                <Image
+                  src="https://img.youtube.com/vi/nqekmDbsKvo/maxresdefault.jpg"
+                  alt="AI 실무 활용 워크숍"
+                  width={320}
+                  height={180}
+                  className="w-full h-full object-cover"
+                  priority
+                />
               </div>
             </div>
             <CardContent className="p-4">
@@ -240,14 +245,16 @@ export default function InflearnHomepage() {
           <Link href="/course/computer-science-beginners">
             <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
               <div className="relative">
-                <Image
-                  src="/images/ai-generation-thumbnail.webp"
-                  alt="AI로도 생성 가능"
-                  width={320}
-                  height={160}
-                  className="w-full h-40 object-cover"
-                  priority
-                />
+                <div className="aspect-video w-full">
+                  <Image
+                    src="/images/ai-generation-thumbnail.webp"
+                    alt="AI로도 생성 가능"
+                    width={320}
+                    height={180}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
+                </div>
               </div>
               <CardContent className="p-4">
                 <h4 className="font-medium text-sm mb-2 hover:text-green-600">생성형 AI 이미지 영상 만들기</h4>
@@ -271,44 +278,49 @@ export default function InflearnHomepage() {
           </Link>
 
           {/* Course Card 3 - Spring MVC */}
-          <Card className="overflow-hidden">
-            <div className="relative">
-              <div className="h-40 bg-gray-100 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-2">
-                    <span className="text-white font-bold">S</span>
+          <Link href="/course/ai-trends">
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+              <div className="relative">
+                <div className="aspect-video w-full">
+                  <Image
+                    src="https://img.youtube.com/vi/Tvh50Xog3H4/maxresdefault.jpg"
+                    alt="AI 활용 동향 강의"
+                    width={320}
+                    height={180}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+              <CardContent className="p-4">
+                <h4 className="font-medium text-sm mb-2 hover:text-green-600">
+                  AI 활용 동향. 에너지 운영현장 중심 AI 도입 사례 공유
+                </h4>
+                <p className="text-xs text-gray-600 mb-2">김영한</p>
+                <div className="flex items-center justify-between mb-2">
+                  <div>
+                    <span className="font-bold text-black ml-0">전사교육</span>
                   </div>
-                  <h3 className="font-bold text-lg text-green-600">전사교육</h3>
-                  <Badge className="bg-green-500 text-white text-xs">Part 1</Badge>
                 </div>
-              </div>
-            </div>
-            <CardContent className="p-4">
-              <h4 className="font-medium text-sm mb-2">AI 활용 동향. 에너지 운영현장 중심 AI 도입 사례 공유</h4>
-              <p className="text-xs text-gray-600 mb-2">김영한</p>
-              <div className="flex items-center justify-between mb-2">
-                <div>
-                  <span className="font-bold text-black ml-0">전사교육</span>
+                <div className="flex items-center space-x-2 text-xs">
+                  <div className="flex items-center">
+                    <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                    <span>5.0 (2,315)</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Users className="w-3 h-3" />
+                    <span>29,300+</span>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-center space-x-2 text-xs">
-                <div className="flex items-center">
-                  <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
-                  <span>5.0 (2,315)</span>
-                </div>
-                <div className="flex items-center">
-                  <Users className="w-3 h-3" />
-                  <span>29,300+</span>
-                </div>
-              </div>
-              <Badge className="bg-blue-500 text-white text-xs mt-2">입문 활용</Badge>
-            </CardContent>
-          </Card>
+                <Badge className="bg-blue-500 text-white text-xs mt-2">입문 활용</Badge>
+              </CardContent>
+            </Card>
+          </Link>
 
           {/* Course Card 4 - Unity MMORPG */}
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="h-40 bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center">
+              <div className="aspect-video w-full bg-gradient-to-r from-purple-600 to-blue-600 flex items-center justify-center">
                 <div className="text-center text-white">
                   <div className="flex items-center justify-center mb-2"></div>
                   <h3 className="font-bold">강의 준비 중 입니다.</h3>
@@ -340,7 +352,7 @@ export default function InflearnHomepage() {
           {/* Course Card 5 - Java Advanced */}
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="h-40 bg-gray-800 flex items-center justify-center">
+              <div className="aspect-video w-full bg-gray-800 flex items-center justify-center">
                 <div className="text-center text-white">
                   <h3 className="font-bold text-lg">강의 준비 중 입니다.</h3>
                 </div>
@@ -371,7 +383,7 @@ export default function InflearnHomepage() {
           {/* Course Card 6 - Java Advanced Part 1 */}
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="h-40 bg-gray-800 flex items-center justify-center">
+              <div className="aspect-video w-full bg-gray-800 flex items-center justify-center">
                 <div className="text-center text-white">
                   <h3 className="font-bold text-lg">강의 준비 중 입니다.</h3>
                 </div>
@@ -402,7 +414,7 @@ export default function InflearnHomepage() {
           {/* Course Card 7 - Game Programmer */}
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="h-40 bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center">
+              <div className="aspect-video w-full bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center">
                 <div className="text-center text-white">
                   <h3 className="font-bold text-lg">강의 준비 중 입니다.</h3>
                 </div>
@@ -431,7 +443,7 @@ export default function InflearnHomepage() {
           {/* Course Card 8 - Spring Boot */}
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="h-40 bg-green-600 flex items-center justify-center">
+              <div className="aspect-video w-full bg-green-600 flex items-center justify-center">
                 <div className="text-center text-white">
                   <h3 className="font-bold text-lg">강의 준비 중 입니다.</h3>
                 </div>
@@ -460,7 +472,7 @@ export default function InflearnHomepage() {
           {/* Course Card 9 - C++ MMORPG */}
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="h-40 bg-gradient-to-r from-red-900 to-black flex items-center justify-center">
+              <div className="aspect-video w-full bg-gradient-to-r from-red-900 to-black flex items-center justify-center">
                 <div className="text-center text-white">
                   <div className="flex items-center justify-center mb-2"></div>
                   <h3 className="font-bold">강의 준비 중 입니다.</h3>
@@ -490,7 +502,7 @@ export default function InflearnHomepage() {
           {/* Course Card 10 - C# Programming */}
           <Card className="overflow-hidden">
             <div className="relative">
-              <div className="h-40 bg-gradient-to-r from-pink-300 to-purple-300 flex items-center justify-center">
+              <div className="aspect-video w-full bg-gradient-to-r from-pink-300 to-purple-300 flex items-center justify-center">
                 <div className="text-center">
                   <h3 className="font-bold text-purple-800">강의 준비 중 입니다.</h3>
                 </div>

@@ -10,7 +10,7 @@ import { useAuth } from "@/contexts/auth-context"
 import { LoginModal } from "@/components/login-modal"
 import CompleteButton from "@/components/CompleteButton"
 
-export default function AIWorkshopPage() {
+export default function AITrendsPage() {
   const [showLoginModal, setShowLoginModal] = useState(false)
   const { user, signOut } = useAuth()
   const iframeRef = useRef<HTMLIFrameElement>(null)
@@ -73,34 +73,41 @@ export default function AIWorkshopPage() {
               강의
             </Link>
             <span>{">"}</span>
-            <span className="text-gray-900">AI 실무 워크숍</span>
+            <span className="text-gray-900">AI 활용 동향</span>
           </div>
         </div>
       </div>
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-yellow-400 to-orange-500 py-16">
+      <div className="bg-gray-100 py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center text-white">
-            <Badge className="bg-blue-500 text-white mb-4">전사교육</Badge>
-            <h1 className="text-4xl font-bold mb-4">전 임직원을 위한 AI 실무 활용 워크숍</h1>
-            <p className="text-lg mb-6 opacity-90">
-              n8n부터 v0까지 주요 AI 자동화·창작 도구를 학습하고, 실제 업무에 적용 가능한 AI 활용 방법을 익히는 실무
-              중심 워크숍입니다.
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="flex justify-center mb-4">
+              <div className="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-4xl">S</span>
+              </div>
+            </div>
+            <h3 className="font-bold text-3xl text-green-600 mb-2">전사교육</h3>
+            <Badge className="bg-green-500 text-white mb-6">Part 1</Badge>
+            <h1 className="text-4xl font-bold mb-4 text-gray-900">
+              AI 활용 동향. 에너지 운영현장 중심 AI 도입 사례 공유
+            </h1>
+            <p className="text-lg mb-6 text-gray-600">
+              에너지 산업의 최신 AI 활용 트렌드와 실제 현장에서의 성공적인 도입 사례를 살펴봅니다.
             </p>
             <div className="flex items-center justify-center space-x-6 mb-8">
               <div className="flex items-center space-x-2">
-                <Star className="w-5 h-5 fill-yellow-300 text-yellow-300" />
-                <span className="font-bold">4.9</span>
-                <span className="opacity-80">(50)</span>
+                <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                <span className="font-bold">5.0</span>
+                <span className="text-gray-600">(2,315)</span>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 text-gray-600">
                 <Users className="w-5 h-5" />
-                <span>120+ 명 수강</span>
+                <span>29,300+ 명 수강</span>
               </div>
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-2 text-gray-600">
                 <Clock className="w-5 h-5" />
-                <span>총 12시간</span>
+                <span>총 2시간</span>
               </div>
             </div>
           </div>
@@ -115,20 +122,20 @@ export default function AIWorkshopPage() {
             <div className="lg:col-span-2">
               {/* Course Overview */}
               <div className="mb-12">
-                <h2 className="text-2xl font-bold mb-6">워크숍 소개</h2>
+                <h2 className="text-2xl font-bold mb-6">강의 소개</h2>
                 <div className="prose max-w-none">
                   <p className="text-gray-700 mb-4">
-                    n8n부터 v0까지 주요 AI 자동화·창작 도구를 학습하고, 실제 업무에 적용 가능한 AI 활용 방법을 익히는
-                    실무 중심 워크숍입니다. 자동화 워크플로우 구축, AI 에이전트 설계, 생성형 도구(v0, ChatGPT, Claude
-                    등) 실습을 통해 전사적으로 AI Tool을 도입하고 생산성을 향상시키는 것을 목표로 합니다.
+                    에너지 산업에서 AI 기술이 어떻게 활용되고 있는지, 실제 운영 현장에서의 도입 사례를 통해 알아봅니다.
+                    스마트 그리드, 에너지 예측, 설비 관리 최적화 등 다양한 분야에서 AI가 만들어낸 혁신적인 변화를 함께
+                    살펴보겠습니다.
                   </p>
                   <p className="text-gray-700 mb-4">
-                    실무에 바로 적용 가능한 다양한 AI 도구들을 직접 사용해보며, 업무 자동화부터 콘텐츠 생성까지 폭넓은
-                    활용 방법을 배웁니다.
+                    전 세계 에너지 기업들의 성공 사례와 청라에너지의 실제 도입 경험을 바탕으로, AI 기술이 에너지 산업의
+                    미래를 어떻게 변화시키고 있는지 구체적으로 이해할 수 있습니다.
                   </p>
                   <p className="text-gray-700">
-                    AI 경험이 없어도 괜찮습니다. 기초부터 차근차근 학습하며, 실전 프로젝트를 통해 실무 역량을 키울 수
-                    있습니다.
+                    기술적 배경 지식이 없어도 이해하기 쉽게 설명되어 있으며, 실무에 바로 적용할 수 있는 인사이트를
+                    제공합니다.
                   </p>
                 </div>
               </div>
@@ -139,34 +146,34 @@ export default function AIWorkshopPage() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                    <span>n8n을 활용한 업무 자동화 워크플로우 구축</span>
+                    <span>글로벌 에너지 산업의 AI 활용 트렌드 이해</span>
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                    <span>AI 에이전트 설계 및 구현 방법 이해</span>
+                    <span>스마트 그리드 운영을 위한 AI 솔루션</span>
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                    <span>v0를 이용한 웹 애플리케이션 빠른 프로토타이핑</span>
+                    <span>에너지 수요 예측 및 최적화 기법</span>
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                    <span>ChatGPT, Claude 등 생성형 AI의 효과적인 활용</span>
+                    <span>설비 유지보수를 위한 예지정비 시스템</span>
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                    <span>실무 프로세스에 AI 도구 통합 방법 습득</span>
+                    <span>실제 도입 사례를 통한 ROI 분석</span>
                   </div>
                   <div className="flex items-start space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-500 mt-1 flex-shrink-0" />
-                    <span>팀 협업을 위한 AI 활용 전략 수립</span>
+                    <span>AI 도입 시 고려해야 할 실무 포인트</span>
                   </div>
                 </div>
               </div>
 
               {/* Complete Button */}
               <div className="mb-8">
-                <CompleteButton lectureId="ai-workshop-10479" />
+                <CompleteButton lectureId="ai-trends-energy" />
               </div>
 
               {/* Curriculum */}
@@ -177,9 +184,9 @@ export default function AIWorkshopPage() {
                   <Card>
                     <CardContent className="p-6">
                       <div className="flex items-center justify-between mb-4">
-                        <h3 className="font-bold text-lg">섹션 1. AI 워크숍 소개 및 주요 도구 개요</h3>
+                        <h3 className="font-bold text-lg">섹션 1. AI 활용 동향과 에너지 산업의 변화</h3>
                         <div className="flex items-center space-x-4 text-sm text-gray-500">
-                          <span>45분</span>
+                          <span>2시간</span>
                         </div>
                       </div>
 
@@ -190,7 +197,7 @@ export default function AIWorkshopPage() {
                             ref={iframeRef}
                             width="100%"
                             height="100%"
-                            src="https://www.youtube.com/embed/nqekmDbsKvo?enablejsapi=1"
+                            src="https://www.youtube.com/embed/Tvh50Xog3H4?enablejsapi=1"
                             title="YouTube video player"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -207,7 +214,7 @@ export default function AIWorkshopPage() {
                             className="cursor-pointer hover:text-green-600 transition-colors"
                             onClick={() => handleTimestampClick(0)}
                           >
-                            00:00 워크숍 소개
+                            00:00 강의 소개
                           </span>
                         </div>
                         <div className="flex items-center space-x-3 text-sm">
@@ -216,7 +223,7 @@ export default function AIWorkshopPage() {
                             className="cursor-pointer hover:text-green-600 transition-colors"
                             onClick={() => handleTimestampClick(300)}
                           >
-                            05:00 AI 도구 생태계 이해
+                            05:00 글로벌 AI 활용 트렌드
                           </span>
                         </div>
                         <div className="flex items-center space-x-3 text-sm">
@@ -225,7 +232,34 @@ export default function AIWorkshopPage() {
                             className="cursor-pointer hover:text-green-600 transition-colors"
                             onClick={() => handleTimestampClick(900)}
                           >
-                            15:00 실습 환경 설정
+                            15:00 에너지 산업의 디지털 전환
+                          </span>
+                        </div>
+                        <div className="flex items-center space-x-3 text-sm">
+                          <Play className="w-4 h-4 text-gray-400" />
+                          <span
+                            className="cursor-pointer hover:text-green-600 transition-colors"
+                            onClick={() => handleTimestampClick(1800)}
+                          >
+                            30:00 스마트 그리드 AI 솔루션
+                          </span>
+                        </div>
+                        <div className="flex items-center space-x-3 text-sm">
+                          <Play className="w-4 h-4 text-gray-400" />
+                          <span
+                            className="cursor-pointer hover:text-green-600 transition-colors"
+                            onClick={() => handleTimestampClick(3600)}
+                          >
+                            60:00 실제 도입 사례 분석
+                          </span>
+                        </div>
+                        <div className="flex items-center space-x-3 text-sm">
+                          <Play className="w-4 h-4 text-gray-400" />
+                          <span
+                            className="cursor-pointer hover:text-green-600 transition-colors"
+                            onClick={() => handleTimestampClick(5400)}
+                          >
+                            90:00 청라에너지 사례 공유
                           </span>
                         </div>
                       </div>
@@ -244,18 +278,19 @@ export default function AIWorkshopPage() {
                         <User className="w-8 h-8 text-gray-600" />
                       </div>
                       <div className="flex-1 text-center sm:text-left">
-                        <h3 className="font-bold text-lg mb-2">청라에너지 AI 팀</h3>
+                        <h3 className="font-bold text-lg mb-2">김영한</h3>
                         <p className="text-gray-600 mb-4">
-                          실무 AI 활용 전문가들로 구성된 강사진이 직접 개발하고 적용한 AI 솔루션을 공유합니다.
+                          에너지 산업 AI 전문가로, 다수의 에너지 기업에서 AI 시스템 도입 및 컨설팅 경험을 보유하고
+                          있습니다. 청라에너지의 디지털 전환을 이끌고 있습니다.
                         </p>
                         <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4 sm:gap-6 text-sm text-gray-500">
                           <div className="flex items-center space-x-1">
                             <BookOpen className="w-4 h-4" />
-                            <span>5개 강의</span>
+                            <span>12개 강의</span>
                           </div>
                           <div className="flex items-center space-x-1">
                             <Users className="w-4 h-4" />
-                            <span>500+ 수강생</span>
+                            <span>50,000+ 수강생</span>
                           </div>
                           <div className="flex items-center space-x-1">
                             <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
@@ -283,19 +318,19 @@ export default function AIWorkshopPage() {
                     </div>
 
                     <div className="space-y-4">
-                      <h3 className="font-bold">워크숍 정보</h3>
+                      <h3 className="font-bold">강의 정보</h3>
                       <div className="space-y-3 text-sm">
                         <div className="flex justify-between">
                           <span className="text-gray-600">총 강의 수</span>
-                          <span className="font-medium">4강의</span>
+                          <span className="font-medium">1강의</span>
                         </div>
                         <div className="flex justify-between">
                           <span className="text-gray-600">총 학습 시간</span>
-                          <span className="font-medium">12시간</span>
+                          <span className="font-medium">2시간</span>
                         </div>
                         <div className="flex justify-between">
                           <span className="text-gray-600">난이도</span>
-                          <span className="font-medium">초급~중급</span>
+                          <span className="font-medium">초급</span>
                         </div>
                         <div className="flex justify-between">
                           <span className="text-gray-600">수료증</span>
@@ -317,15 +352,15 @@ export default function AIWorkshopPage() {
                     <ul className="space-y-2 text-sm">
                       <li className="flex items-start space-x-2">
                         <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span>기본적인 컴퓨터 활용 능력</span>
+                        <span>에너지 산업에 대한 기본 이해</span>
                       </li>
                       <li className="flex items-start space-x-2">
                         <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span>AI에 대한 호기심과 학습 의지</span>
+                        <span>AI 기술에 대한 관심</span>
                       </li>
                       <li className="flex items-start space-x-2">
                         <CheckCircle className="w-4 h-4 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span>프로그래밍 경험 불필요</span>
+                        <span>사전 기술 지식 불필요</span>
                       </li>
                     </ul>
                   </CardContent>
@@ -336,11 +371,11 @@ export default function AIWorkshopPage() {
                   <CardContent className="p-6">
                     <h3 className="font-bold mb-4">태그</h3>
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="outline">AI자동화</Badge>
-                      <Badge variant="outline">n8n</Badge>
-                      <Badge variant="outline">v0</Badge>
-                      <Badge variant="outline">생성형AI</Badge>
-                      <Badge variant="outline">실무</Badge>
+                      <Badge variant="outline">AI트렌드</Badge>
+                      <Badge variant="outline">에너지</Badge>
+                      <Badge variant="outline">스마트그리드</Badge>
+                      <Badge variant="outline">전사교육</Badge>
+                      <Badge variant="outline">초급</Badge>
                     </div>
                   </CardContent>
                 </Card>
@@ -352,7 +387,7 @@ export default function AIWorkshopPage() {
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl font-bold mb-4">로그인이 필요합니다</h2>
-            <p className="text-gray-600 mb-6">이 워크숍을 수강하려면 먼저 로그인해주세요.</p>
+            <p className="text-gray-600 mb-6">이 강의를 수강하려면 먼저 로그인해주세요.</p>
             <Button onClick={() => setShowLoginModal(true)} className="bg-green-500 hover:bg-green-600 px-8 py-3">
               로그인하기
             </Button>
