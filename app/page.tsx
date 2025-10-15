@@ -204,7 +204,7 @@ export default function InflearnHomepage() {
       <main className="container mx-auto px-4 py-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
           {/* Course Card 1 - Unity */}
-          <Card className="overflow-hidden">
+          <Card className="overflow-hidden hover:shadow-lg transition-shadow">
             <div className="relative">
               <div className="aspect-video w-full">
                 <Image
@@ -436,7 +436,7 @@ export default function InflearnHomepage() {
           </Link>
 
           {/* Course Card 7 - Game Programmer */}
-          <Card className="overflow-hidden">
+          <Card className="overflow-hidden hover:shadow-lg transition-shadow">
             <div className="relative">
               <div className="aspect-video w-full bg-gradient-to-r from-blue-500 to-green-500 flex items-center justify-center">
                 <div className="text-center text-white">
@@ -465,7 +465,7 @@ export default function InflearnHomepage() {
           </Card>
 
           {/* Course Card 8 - Spring Boot */}
-          <Card className="overflow-hidden">
+          <Card className="overflow-hidden hover:shadow-lg transition-shadow">
             <div className="relative">
               <div className="aspect-video w-full bg-green-600 flex items-center justify-center">
                 <div className="text-center text-white">
@@ -494,7 +494,7 @@ export default function InflearnHomepage() {
           </Card>
 
           {/* Course Card 9 - C++ MMORPG */}
-          <Card className="overflow-hidden">
+          <Card className="overflow-hidden hover:shadow-lg transition-shadow">
             <div className="relative">
               <div className="aspect-video w-full bg-gradient-to-r from-red-900 to-black flex items-center justify-center">
                 <div className="text-center text-white">
