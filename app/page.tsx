@@ -560,6 +560,71 @@ export default function InflearnHomepage() {
               </CardContent>
             </Card>
           </Link>
+
+          {/* Course Card 11 - AI 트렌드 교육자료 */}
+          <Link href="/course/ai-trends-materials">
+            <Card className="overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+              <div className="relative">
+                <div className="aspect-video w-full">
+                  <Image
+                    src="https://img.youtube.com/vi/UIBLOK6XCCA/maxresdefault.jpg"
+                    alt="ai 트렌드 교육자료"
+                    width={320}
+                    height={180}
+                    className="w-full h-full object-cover"
+                    priority
+                  />
+                </div>
+              </div>
+              <CardContent className="p-4">
+                <h4 className="font-medium text-sm mb-2 hover:text-green-600">AI 트렌드 교육자료</h4>
+                <p className="text-xs text-gray-600 mb-2">도슨티</p>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="font-bold">핵심역량 교육</span>
+                </div>
+                <div className="flex items-center space-x-2 text-xs">
+                  <div className="flex items-center">
+                    <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                    <span>5.0 (0)</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Users className="w-3 h-3" />
+                    <span>0+</span>
+                  </div>
+                </div>
+                <Badge className="bg-blue-500 text-white text-xs mt-2">입문 활용</Badge>
+              </CardContent>
+            </Card>
+          </Link>
+
+          {/* Course Card 12 - DX 트렌드 교육자료 */}
+          <Card className="overflow-hidden hover:shadow-lg transition-shadow">
+            <div className="relative">
+              <div className="aspect-video w-full bg-gradient-to-r from-cyan-500 to-teal-500 flex items-center justify-center">
+                <div className="text-center text-white">
+                  <h3 className="font-bold text-lg">강의 준비 중 입니다.</h3>
+                </div>
+              </div>
+            </div>
+            <CardContent className="p-4">
+              <h4 className="font-medium text-sm mb-2">dx 트렌드 교육자료</h4>
+              <p className="text-xs text-gray-600 mb-2">도슨티</p>
+              <div className="flex items-center justify-between mb-2">
+                <span className="font-bold">핵심역량 교육</span>
+              </div>
+              <div className="flex items-center space-x-2 text-xs">
+                <div className="flex items-center">
+                  <Star className="w-3 h-3 fill-yellow-400 text-yellow-400" />
+                  <span>5.0 (0)</span>
+                </div>
+                <div className="flex items-center">
+                  <Users className="w-3 h-3" />
+                  <span>0+</span>
+                </div>
+              </div>
+              <Badge className="bg-blue-500 text-white text-xs mt-2">입문 활용</Badge>
+            </CardContent>
+          </Card>
         </div>
       </main>
 
